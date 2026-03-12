@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Arrow Game – Shoot the apple off the man's head! A fun HTML5 Canvas arcade game with projectile physics.">
+    <title>Arrow Game – Apple Shooter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- HUD -->
+    <div id="hud">
+        <div id="lives-display">
+            <span class="hud-label">LIVES</span>
+            <span id="lives" class="hud-value hud-hearts">❤️❤️❤️</span>
+        </div>
+        <div id="score-display">
+            <span class="hud-label">SCORE</span>
+            <span id="score" class="hud-value">0</span>
+        </div>
+        <div id="combo-display" class="combo-hidden">
+            <span class="hud-label">COMBO</span>
+            <span id="combo" class="hud-value hud-combo">x1</span>
+        </div>
+        <div id="wind-display">
+            <span class="hud-label">WIND</span>
+            <span id="wind" class="hud-value">→ 0</span>
+        </div>
+        <div id="highscore-display">
+            <span class="hud-label">BEST</span>
+            <span id="highscore" class="hud-value">0</span>
+        </div>
+    </div>
+
+    <!-- Level badge -->
+    <div id="distance-badge">
+        <span id="distance-text">Level 1 · 280 px</span>
+    </div>
+
+    <!-- Canvas -->
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- Game Over Overlay -->
+    <div id="game-over-overlay" class="hidden">
+        <div id="game-over-box">
+            <h1 id="game-over-title">GAME OVER</h1>
+            <div id="game-over-stats">
+                <div class="stat-row">
+                    <span class="stat-label">Score</span>
+                    <span id="game-over-score" class="stat-value">0</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Best Combo</span>
+                    <span id="game-over-combo" class="stat-value">x0</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Level Reached</span>
+                    <span id="game-over-level" class="stat-value">1</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Accuracy</span>
+                    <span id="game-over-accuracy" class="stat-value">0%</span>
+                </div>
+                <div class="stat-row best-row">
+                    <span class="stat-label">Best Score</span>
+                    <span id="game-over-best" class="stat-value">0</span>
+                </div>
+            </div>
+            <button id="restart-btn">PLAY AGAIN</button>
+        </div>
+    </div>
+
+    <!-- Start screen -->
+    <div id="start-overlay">
+        <div id="start-box">
+            <h1 id="start-title">🏹 APPLE ARCHER</h1>
+            <p id="start-desc">
+                Shoot the apple off the man's head!<br>
+                Hold mouse to aim · Release to shoot<br>
+                <small>🎯 Center hit = PERFECT! · ⏱️ Shoot before time runs out!</small><br>
+                <small>⚡ Grab power-ups · 🐦 Watch out for birds!</small>
+            </p>
+            <button id="start-btn">START GAME</button>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
